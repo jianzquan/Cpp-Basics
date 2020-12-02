@@ -182,3 +182,117 @@ int main()
 
     return 0;
 }
+
+
+# 3-9 float型的有效位数
+#include <iostream>
+int main()
+{
+    using namespace std;
+    float a = 2.34e+22f;
+    float b = a + 1.0f;
+
+    cout << "a = " << a << endl;
+    cout << "b - a = " << b - a << endl;
+
+    return 0;
+}
+
+
+# 3-10 算术运算符
+#include <iostream>
+int main()
+{
+    using namespace std;
+    float hats, heads;
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    cout << "Enter a number: ";
+    cin >> hats;
+    cout << "Enter another number: ";
+    cin >> heads;
+
+    cout << "hats = " << hats << "; heads: " << heads << endl;
+    cout << "hats + heads = " << hats + heads << endl;
+    cout << "hats - heads = " << hats - heads << endl;
+    cout << "hats * heads = " << hats * heads << endl;
+    cout << "hats / heads = " << hats / heads << endl;
+
+    return 0;
+}
+
+
+# 3-11 各种类型除法
+#include <iostream>
+int main()
+{
+    using namespace std;
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    cout << "Integer division: 9/5 = " << 9/5 << endl;
+    cout << "Floating-point division: 9.0/5.0 = ";
+    cout << 9.0/5.0 << endl;
+    cout << "Mixed division: 9.0/5 = " << 9.0/5 << endl;
+    cout << "double constants: 1e7/9.0 = "; 
+    cout << 1.e7/9.0 << endl;
+    cout << "float constants: 1e7f/9.0f = ";
+    cout << 1.e7f/9.0f << endl;
+
+    return 0;
+}
+
+
+# 3-12 取模运算
+#include <iostream>
+int main()
+{
+    using namespace std;
+    const int Lbs_per_stn = 14;
+    int lbs;
+
+    cout << "Enter your weight in pounds: ";
+    cin >> lbs;
+    int stone = lbs / Lbs_per_stn;
+    int pounds = lbs % Lbs_per_stn;
+    cout << lbs << " pounds are " << stone
+         << " stone, " << pounds << " pound(s).\n";
+
+    return 0;
+}
+
+
+# 3-13 初始化类型转换
+#include <iostream>
+int main()
+{
+    using namespace std;
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    float tree = 3;
+    int guess(3.9832);
+    int debt = 7.2E12;
+    cout << "tree = " << tree << endl;
+    cout << "guess = " << guess << endl;
+    cout << "debt = " << debt << endl;
+
+    return 0;
+}
+
+
+# 3-14 数值类型转换
+#include <iostream>
+int main()
+{
+    using namespace std;
+    int auks, bats, coots;
+    auks = 19.99 + 11.99;
+    bats = (int)19.99 + (int)11.99;
+    coots = int(19.99) + int(11.99);
+    cout << "auks = " << auks << ", bats = " << bats;
+    cout << ", coots = " << coots << endl;
+
+    char ch = 'Z';
+    cout << "The code for " << ch << " is ";
+    cout << int(ch) << endl;
+    cout << "Yes, the code is ";
+    cout << static_cast<int>(ch) << endl;
+
+    return 0;
+}
